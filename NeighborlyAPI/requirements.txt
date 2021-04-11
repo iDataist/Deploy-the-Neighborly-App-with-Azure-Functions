@@ -1,0 +1,11 @@
+flask 
+requests 
+flask-bootstrap 
+flask-restplus 
+werkzeug==0.16.1
+azure-functions 
+azure-cosmos 
+pymongo 
+azure-cli-core 
+feedgen 
+sendgrid 
