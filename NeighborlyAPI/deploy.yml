@@ -1,0 +1,138 @@
+data:
+  AzureWebJobsStorage: ''
+  FUNCTIONS_WORKER_RUNTIME: cHl0aG9u
+  cosmosdb_connection_string: bW9uZ29kYjovL2Nvc21vczIwMjEwNDExOjFYZFFzNnREMlZCUjRHY251VnlkRjd0NlNiMEtqaXNzd1VDcm9WUDhpRkZvcDVLc2NraFpaR2tjb0gxN0p4SFVXU003SWpwYU1WU1k0TnRFanRWMU53PT1AY29zbW9zMjAyMTA0MTEubW9uZ28uY29zbW9zLmF6dXJlLmNvbToxMDI1NS8/c3NsPXRydWUmcmVwbGljYVNldD1nbG9iYWxkYiZyZXRyeXdyaXRlcz1mYWxzZSZtYXhJZGxlVGltZU1TPTEyMDAwMCZhcHBOYW1lPUBjb3Ntb3MyMDIxMDQxMUA=
+apiVersion: v1
+kind: Secret
+metadata:
+  name: kubercluster20210411
+---
+data:
+  host.master: N0hPRWFhdEkwdFJCMGZ4WVpxdW9aZGF5V0g1M1FwVThwbEJjcGVnV0tUeldjV0xQeUxza3BBPT0=
+  host.function.default: alptRDIyS2JMLzZIVTFndHhNWEJhcWpBZ3JTbWFwdTNweUtxTmt5U0VhQzRGWGlyUHRDUlRnPT0=
+  host.systemKey.default: UEZCNFBGY2F1WGprb0ZXQXNlajViZ1N0WS9GUmFDcnYwUEtOYzNoWDJBeHpUVzkxZmcwdzJBPT0=
+  functions.createadvertisement.default: UlZhUFVXUlhaU2d1WjRmU01PMlBVSGZRbTFYRFp6VU1tUDZQWG1wVjN5b2pzZjNzOGl3N3ZBPT0=
+  functions.deleteadvertisement.default: SzJFWjFSRnZNMnpubno5Qjk3UzhWcXFBZUVPcDZna2FNQmRkYlR1SG0wamNMTlVWR2ZmM1l3PT0=
+  functions.getadvertisement.default: R0RMN2dVZ0w1N29RODNaSmFSZjVxZmJyY2E0aEFUNXdNYTJFYW1lWHNwU1l3WHlVZHdtMDRBPT0=
+  functions.getadvertisements.default: Z044aDI3dXl2dXlFZUsvcnVKTnBKRFJoVXZqdlc3ZVFnNHk5Q0RIODdPaUI0UUVuNXFoUkJRPT0=
+  functions.getpost.default: ZDZVa2RPYTIwYXhDMjFmVTJjR2pmRVNseGJ6YXNiNGdUdE44YXhTQ3dZWnFxVnZDR2U5b0x3PT0=
+  functions.getposts.default: UmFwNzNxeEFPQWFlUjBrbmFabzM3czlld2FqemNuaFltRDlKQWNXanc5VHZrNU5CSFVIQUpRPT0=
+  functions.updateadvertisement.default: TE5aSjNPNFZhWGhMcGM3bDgyVkRzWmdoNWRxYW5EUml2ZTBqbnZGeFZxUTREeWNCTTZ1ZWdBPT0=
+apiVersion: v1
+kind: Secret
+metadata:
+  name: func-keys-kube-secret-kubercluster20210411
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: kubercluster20210411-function-keys-identity-svc-act
+---
+rules:
+- apiGroups:
+  - ''
+  resources:
+  - secrets
+  - configMaps
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: functions-keys-manager-role
+---
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: functions-keys-manager-role
+subjects:
+- kind: ServiceAccount
+  name: kubercluster20210411-function-keys-identity-svc-act
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: kubercluster20210411-function-keys-identity-svc-act-functions-keys-manager-rolebinding
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubercluster20210411-http
+spec:
+  selector:
+    app: kubercluster20210411-http
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubercluster20210411-http
+  labels:
+    app: kubercluster20210411-http
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubercluster20210411-http
+  template:
+    metadata:
+      labels:
+        app: kubercluster20210411-http
+    spec:
+      containers:
+      - name: kubercluster20210411-http
+        image: appregistry20210411.azurecr.io/docker20210411:v1
+        ports:
+        - containerPort: 80
+        env:
+        - name: AzureFunctionsJobHost__functions__0
+          value: createAdvertisement
+        - name: AzureFunctionsJobHost__functions__1
+          value: deleteAdvertisement
+        - name: AzureFunctionsJobHost__functions__2
+          value: getAdvertisement
+        - name: AzureFunctionsJobHost__functions__3
+          value: getAdvertisements
+        - name: AzureFunctionsJobHost__functions__4
+          value: getPost
+        - name: AzureFunctionsJobHost__functions__5
+          value: getPosts
+        - name: AzureFunctionsJobHost__functions__6
+          value: updateAdvertisement
+        - name: AzureWebJobsSecretStorageType
+          value: kubernetes
+        - name: AzureWebJobsKubernetesSecretName
+          value: secrets/func-keys-kube-secret-kubercluster20210411
+        envFrom:
+        - secretRef:
+            name: kubercluster20210411
+        readinessProbe:
+          failureThreshold: 3
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 240
+          httpGet:
+            path: /
+            port: 80
+            scheme: HTTP
+        startupProbe:
+          failureThreshold: 3
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 240
+          httpGet:
+            path: /
+            port: 80
+            scheme: HTTP
+      serviceAccountName: kubercluster20210411-function-keys-identity-svc-act
+---
+
