@@ -1,0 +1,436 @@
+➜ Deploying-the-Neighborly-App-with-Azure-Functions git:(main) ✗ zsh resource.zsh
+{
+  "id": "/subscriptions/5bb35c36-233e-4b7e-afd9-a2b795899fb9/resourceGroups/group20210411",
+  "location": "westus2",
+  "managedBy": null,
+  "name": "group20210411",
+  "properties": {
+    "provisioningState": "Succeeded"
+  },
+  "tags": null,
+  "type": "Microsoft.Resources/resourceGroups"
+}
+Argument '--server-version' is in preview and under development. Reference and support levels: https://aka.ms/CLI_refstatus
+{
+  "apiProperties": {
+    "serverVersion": "3.6"
+  },
+  "backupPolicy": {
+    "periodicModeProperties": {
+      "backupIntervalInMinutes": 240,
+      "backupRetentionIntervalInHours": 8,
+      "backupStorageRedundancy": "Geo"
+    },
+    "type": "Periodic"
+  },
+  "capabilities": [
+    {
+      "name": "EnableMongo"
+    }
+  ],
+  "connectorOffer": null,
+  "consistencyPolicy": {
+    "defaultConsistencyLevel": "Eventual",
+    "maxIntervalInSeconds": 5,
+    "maxStalenessPrefix": 100
+  },
+  "cors": [],
+  "databaseAccountOfferType": "Standard",
+  "disableKeyBasedMetadataWriteAccess": false,
+  "documentEndpoint": "https://cosmos20210411.documents.azure.com:443/",
+  "enableAnalyticalStorage": false,
+  "enableAutomaticFailover": false,
+  "enableCassandraConnector": null,
+  "enableFreeTier": false,
+  "enableMultipleWriteLocations": false,
+  "failoverPolicies": [
+    {
+      "failoverPriority": 0,
+      "id": "cosmos20210411-westus2",
+      "locationName": "West US 2"
+    }
+  ],
+  "id": "/subscriptions/5bb35c36-233e-4b7e-afd9-a2b795899fb9/resourceGroups/group20210411/providers/Microsoft.DocumentDB/databaseAccounts/cosmos20210411",
+  "identity": {
+    "principalId": null,
+    "tenantId": null,
+    "type": "None",
+    "userAssignedIdentities": null
+  },
+  "ipRules": [],
+  "isVirtualNetworkFilterEnabled": false,
+  "keyVaultKeyUri": null,
+  "kind": "MongoDB",
+  "location": "West US 2",
+  "locations": [
+    {
+      "documentEndpoint": "https://cosmos20210411-westus2.documents.azure.com:443/",
+      "failoverPriority": 0,
+      "id": "cosmos20210411-westus2",
+      "isZoneRedundant": false,
+      "locationName": "West US 2",
+      "provisioningState": "Succeeded"
+    }
+  ],
+  "name": "cosmos20210411",
+  "networkAclBypass": "None",
+  "networkAclBypassResourceIds": [],
+  "privateEndpointConnections": null,
+  "provisioningState": "Succeeded",
+  "publicNetworkAccess": "Enabled",
+  "readLocations": [
+    {
+      "documentEndpoint": "https://cosmos20210411-westus2.documents.azure.com:443/",
+      "failoverPriority": 0,
+      "id": "cosmos20210411-westus2",
+      "isZoneRedundant": false,
+      "locationName": "West US 2",
+      "provisioningState": "Succeeded"
+    }
+  ],
+  "resourceGroup": "group20210411",
+  "systemData": {
+    "createdAt": "2021-04-13T18:38:19.6518444Z"
+  },
+  "tags": {},
+  "type": "Microsoft.DocumentDB/databaseAccounts",
+  "virtualNetworkRules": [],
+  "writeLocations": [
+    {
+      "documentEndpoint": "https://cosmos20210411-westus2.documents.azure.com:443/",
+      "failoverPriority": 0,
+      "id": "cosmos20210411-westus2",
+      "isZoneRedundant": false,
+      "locationName": "West US 2",
+      "provisioningState": "Succeeded"
+    }
+  ]
+}
+{- Finished ..
+  "id": "/subscriptions/5bb35c36-233e-4b7e-afd9-a2b795899fb9/resourceGroups/group20210411/providers/Microsoft.DocumentDB/databaseAccounts/cosmos20210411/mongodbDatabases/mongodb20210411",
+  "location": null,
+  "name": "mongodb20210411",
+  "options": null,
+  "resource": {
+    "id": "mongodb20210411"
+  },
+  "resourceGroup": "group20210411",
+  "tags": null,
+  "type": "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases"
+}
+{- Finished ..
+  "id": "/subscriptions/5bb35c36-233e-4b7e-afd9-a2b795899fb9/resourceGroups/group20210411/providers/Microsoft.DocumentDB/databaseAccounts/cosmos20210411/mongodbDatabases/mongodb20210411/collections/adcollection20210411",
+  "location": null,
+  "name": "adcollection20210411",
+  "options": null,
+  "resource": {
+    "analyticalStorageTtl": null,
+    "id": "adcollection20210411",
+    "indexes": [
+      {
+        "key": {
+          "keys": [
+            "_id"
+          ]
+        },
+        "options": null
+      }
+    ],
+    "shardKey": null
+  },
+  "resourceGroup": "group20210411",
+  "tags": null,
+  "type": "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections"
+}
+{- Finished ..
+  "id": "/subscriptions/5bb35c36-233e-4b7e-afd9-a2b795899fb9/resourceGroups/group20210411/providers/Microsoft.DocumentDB/databaseAccounts/cosmos20210411/mongodbDatabases/mongodb20210411/collections/postcollection20210411",
+  "location": null,
+  "name": "postcollection20210411",
+  "options": null,
+  "resource": {
+    "analyticalStorageTtl": null,
+    "id": "postcollection20210411",
+    "indexes": [
+      {
+        "key": {
+          "keys": [
+            "_id"
+          ]
+        },
+        "options": null
+      }
+    ],
+    "shardKey": null
+  },
+  "resourceGroup": "group20210411",
+  "tags": null,
+  "type": "Microsoft.DocumentDB/databaseAccounts/mongodbDatabases/collections"
+}
+2021-04-13T13:40:42.847-0500	connected to: mongodb://cosmos20210411.mongo.cosmos.azure.com:10255/
+2021-04-13T13:40:42.930-0500	done
+2021-04-13T13:40:44.621-0500	connected to: mongodb://cosmos20210411.mongo.cosmos.azure.com:10255/
+2021-04-13T13:40:44.701-0500	done
+{- Finished ..
+  "accessTier": "Hot",
+  "allowBlobPublicAccess": null,
+  "allowSharedKeyAccess": null,
+  "azureFilesIdentityBasedAuthentication": null,
+  "blobRestoreStatus": null,
+  "creationTime": "2021-04-13T18:40:49.451997+00:00",
+  "customDomain": null,
+  "enableHttpsTrafficOnly": true,
+  "enableNfsV3": null,
+  "encryption": {
+    "encryptionIdentity": null,
+    "keySource": "Microsoft.Storage",
+    "keyVaultProperties": null,
+    "requireInfrastructureEncryption": null,
+    "services": {
+      "blob": {
+        "enabled": true,
+        "keyType": "Account",
+        "lastEnabledTime": "2021-04-13T18:40:49.530213+00:00"
+      },
+      "file": {
+        "enabled": true,
+        "keyType": "Account",
+        "lastEnabledTime": "2021-04-13T18:40:49.530213+00:00"
+      },
+      "queue": null,
+      "table": null
+    }
+  },
+  "extendedLocation": null,
+  "failoverInProgress": null,
+  "geoReplicationStats": null,
+  "id": "/subscriptions/5bb35c36-233e-4b7e-afd9-a2b795899fb9/resourceGroups/group20210411/providers/Microsoft.Storage/storageAccounts/blob20210411",
+  "identity": null,
+  "isHnsEnabled": null,
+  "kind": "StorageV2",
+  "largeFileSharesState": null,
+  "lastGeoFailoverTime": null,
+  "location": "westus2",
+  "minimumTlsVersion": null,
+  "name": "blob20210411",
+  "networkRuleSet": {
+    "bypass": "AzureServices",
+    "defaultAction": "Allow",
+    "ipRules": [],
+    "resourceAccessRules": null,
+    "virtualNetworkRules": []
+  },
+  "primaryEndpoints": {
+    "blob": "https://blob20210411.blob.core.windows.net/",
+    "dfs": "https://blob20210411.dfs.core.windows.net/",
+    "file": "https://blob20210411.file.core.windows.net/",
+    "internetEndpoints": null,
+    "microsoftEndpoints": null,
+    "queue": "https://blob20210411.queue.core.windows.net/",
+    "table": "https://blob20210411.table.core.windows.net/",
+    "web": "https://blob20210411.z5.web.core.windows.net/"
+  },
+  "primaryLocation": "westus2",
+  "privateEndpointConnections": [],
+  "provisioningState": "Succeeded",
+  "resourceGroup": "group20210411",
+  "routingPreference": null,
+  "secondaryEndpoints": {
+    "blob": "https://blob20210411-secondary.blob.core.windows.net/",
+    "dfs": "https://blob20210411-secondary.dfs.core.windows.net/",
+    "file": null,
+    "internetEndpoints": null,
+    "microsoftEndpoints": null,
+    "queue": "https://blob20210411-secondary.queue.core.windows.net/",
+    "table": "https://blob20210411-secondary.table.core.windows.net/",
+    "web": "https://blob20210411-secondary.z5.web.core.windows.net/"
+  },
+  "secondaryLocation": "westcentralus",
+  "sku": {
+    "name": "Standard_RAGRS",
+    "tier": "Standard"
+  },
+  "statusOfPrimary": "available",
+  "statusOfSecondary": "available",
+  "tags": {},
+  "type": "Microsoft.Storage/storageAccounts"
+}
+No functions version specified so defaulting to 2. In the future, specifying a version will be required. To create a 2.x function you would pass in the flag `--functions-version 2`
+Your Linux function app 'funcapp20210411', that uses a consumption plan has been successfully created but is not active until content is published using Azure Portal or the Functions Core Tools.
+Application Insights "funcapp20210411" was created for this Function App. You can visit https://portal.azure.com/#resource/subscriptions/5bb35c36-233e-4b7e-afd9-a2b795899fb9/resourceGroups/group20210411/providers/microsoft.insights/components/funcapp20210411/overview to view your Application Insights component
+{
+  "availabilityState": "Normal",
+  "clientAffinityEnabled": false,
+  "clientCertEnabled": false,
+  "clientCertExclusionPaths": null,
+  "cloningInfo": null,
+  "containerSize": 0,
+  "dailyMemoryTimeQuota": 0,
+  "defaultHostName": "funcapp20210411.azurewebsites.net",
+  "enabled": true,
+  "enabledHostNames": [
+    "funcapp20210411.azurewebsites.net",
+    "funcapp20210411.scm.azurewebsites.net"
+  ],
+  "hostNameSslStates": [
+    {
+      "hostType": "Standard",
+      "ipBasedSslResult": null,
+      "ipBasedSslState": "NotConfigured",
+      "name": "funcapp20210411.azurewebsites.net",
+      "sslState": "Disabled",
+      "thumbprint": null,
+      "toUpdate": null,
+      "toUpdateIpBasedSsl": null,
+      "virtualIp": null
+    },
+    {
+      "hostType": "Repository",
+      "ipBasedSslResult": null,
+      "ipBasedSslState": "NotConfigured",
+      "name": "funcapp20210411.scm.azurewebsites.net",
+      "sslState": "Disabled",
+      "thumbprint": null,
+      "toUpdate": null,
+      "toUpdateIpBasedSsl": null,
+      "virtualIp": null
+    }
+  ],
+  "hostNames": [
+    "funcapp20210411.azurewebsites.net"
+  ],
+  "hostNamesDisabled": false,
+  "hostingEnvironmentProfile": null,
+  "httpsOnly": false,
+  "hyperV": false,
+  "id": "/subscriptions/5bb35c36-233e-4b7e-afd9-a2b795899fb9/resourceGroups/group20210411/providers/Microsoft.Web/sites/funcapp20210411",
+  "identity": null,
+  "inProgressOperationId": null,
+  "isDefaultContainer": null,
+  "isXenon": false,
+  "kind": "functionapp,linux",
+  "lastModifiedTimeUtc": "2021-04-13T18:41:19.530000",
+  "location": "westus2",
+  "maxNumberOfWorkers": null,
+  "name": "funcapp20210411",
+  "outboundIpAddresses": "52.175.254.10,52.183.85.212,52.183.86.156,52.183.100.42,52.183.85.188",
+  "possibleOutboundIpAddresses": "52.175.254.10,52.183.85.212,52.183.86.156,52.183.100.42,52.183.85.188,52.151.29.83,52.151.33.248",
+  "redundancyMode": "None",
+  "repositorySiteName": "funcapp20210411",
+  "reserved": true,
+  "resourceGroup": "group20210411",
+  "scmSiteAlsoStopped": false,
+  "serverFarmId": "/subscriptions/5bb35c36-233e-4b7e-afd9-a2b795899fb9/resourceGroups/group20210411/providers/Microsoft.Web/serverfarms/WestUS2LinuxDynamicPlan",
+  "siteConfig": {
+    "acrUseManagedIdentityCreds": false,
+    "acrUserManagedIdentityId": null,
+    "alwaysOn": null,
+    "apiDefinition": null,
+    "apiManagementConfig": null,
+    "appCommandLine": null,
+    "appSettings": null,
+    "autoHealEnabled": null,
+    "autoHealRules": null,
+    "autoSwapSlotName": null,
+    "azureMonitorLogCategories": null,
+    "azureStorageAccounts": null,
+    "connectionStrings": null,
+    "cors": null,
+    "customAppPoolIdentityAdminState": null,
+    "customAppPoolIdentityTenantState": null,
+    "defaultDocuments": null,
+    "detailedErrorLoggingEnabled": null,
+    "documentRoot": null,
+    "experiments": null,
+    "fileChangeAuditEnabled": null,
+    "ftpsState": null,
+    "functionAppScaleLimit": null,
+    "functionsRuntimeScaleMonitoringEnabled": null,
+    "handlerMappings": null,
+    "healthCheckPath": null,
+    "http20Enabled": null,
+    "httpLoggingEnabled": null,
+    "ipSecurityRestrictions": [
+      {
+        "action": "Allow",
+        "description": "Allow all access",
+        "ipAddress": "Any",
+        "name": "Allow all",
+        "priority": 1,
+        "subnetMask": null,
+        "subnetTrafficTag": null,
+        "tag": null,
+        "vnetSubnetResourceId": null,
+        "vnetTrafficTag": null
+      }
+    ],
+    "javaContainer": null,
+    "javaContainerVersion": null,
+    "javaVersion": null,
+    "keyVaultReferenceIdentity": null,
+    "limits": null,
+    "linuxFxVersion": null,
+    "loadBalancing": null,
+    "localMySqlEnabled": null,
+    "logsDirectorySizeLimit": null,
+    "machineKey": null,
+    "managedPipelineMode": null,
+    "managedServiceIdentityId": null,
+    "metadata": null,
+    "minTlsVersion": null,
+    "minimumElasticInstanceCount": 0,
+    "netFrameworkVersion": null,
+    "nodeVersion": null,
+    "numberOfWorkers": null,
+    "phpVersion": null,
+    "powerShellVersion": null,
+    "preWarmedInstanceCount": null,
+    "publishingPassword": null,
+    "publishingUsername": null,
+    "push": null,
+    "pythonVersion": null,
+    "remoteDebuggingEnabled": null,
+    "remoteDebuggingVersion": null,
+    "requestTracingEnabled": null,
+    "requestTracingExpirationTime": null,
+    "routingRules": null,
+    "runtimeADUser": null,
+    "runtimeADUserPassword": null,
+    "scmIpSecurityRestrictions": [
+      {
+        "action": "Allow",
+        "description": "Allow all access",
+        "ipAddress": "Any",
+        "name": "Allow all",
+        "priority": 1,
+        "subnetMask": null,
+        "subnetTrafficTag": null,
+        "tag": null,
+        "vnetSubnetResourceId": null,
+        "vnetTrafficTag": null
+      }
+    ],
+    "scmIpSecurityRestrictionsUseMain": null,
+    "scmMinTlsVersion": null,
+    "scmType": null,
+    "tracingOptions": null,
+    "use32BitWorkerProcess": null,
+    "virtualApplications": null,
+    "vnetName": null,
+    "vnetPrivatePortsCount": null,
+    "vnetRouteAllEnabled": null,
+    "webSocketsEnabled": null,
+    "websiteTimeZone": null,
+    "winAuthAdminState": null,
+    "winAuthTenantState": null,
+    "windowsFxVersion": null,
+    "xManagedServiceIdentityId": null
+  },
+  "slotSwapStatus": null,
+  "state": "Running",
+  "suspendedTill": null,
+  "tags": null,
+  "targetSwapSlot": null,
+  "trafficManagerHostNames": null,
+  "type": "Microsoft.Web/sites",
+  "usageState": "Normal"
+}
