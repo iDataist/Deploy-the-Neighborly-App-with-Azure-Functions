@@ -2,15 +2,8 @@
 
 ## Project Overview
 
-For the final project, we are going to build an app called "Neighborly". Neighborly is a Python Flask-powered web application that allows neighbors to post advertisements for services and products they can offer.
+I built a web application called "Neighborly" that allows neighbors to post advertisements for services and products they can offer. The front-end application is built with the Python Flask micro framework. The application makes direct requests to the back-end API endpoints, which allow users to view, create, edit, and delete the community advertisements.
 
-The Neighborly project is comprised of a front-end application that is built with the Python Flask micro framework. The application allows the user to view, create, edit, and delete the community advertisements.
-
-The application makes direct requests to the back-end API endpoints. These are endpoints that we will also build for the server-side of the application.
-
-You can see an example of the deployed app below.
-
-![Deployed App](images/final-app.png)
 
 ## Dependencies
 
@@ -21,6 +14,7 @@ You will need to install the following locally:
 - [Azure Function tools V3](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Ccsharp%2Cbash#install-the-azure-functions-core-tools)
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
 - [Azure Tools for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack)
+- [MongoDB Database Tools](https://www.mongodb.com/try/download/database-tools)
 
 On Mac, you can do this with:
 
@@ -34,11 +28,15 @@ brew update && brew install azure-cli
 # install azure function core tools 
 brew tap azure/functions
 brew install azure-functions-core-tools@3
+
+# get the mongodb library
+brew install mongodb-community@4.2
+
+# check if mongoimport lib exists
+mongoimport --version
 ```
 
-## Project Instructions
-
-In case you need to return to the project later on, it is suggested to store any commands you use so you can re-create your work. You should also take a look at the project rubric to be aware of any places you may need to take screenshots as proof of your work (or else keep your resource up and running until you have passed, which may incur costs).
+## Steps to deploy the webapp
 
 ### I. Creating Azure Function App
 
