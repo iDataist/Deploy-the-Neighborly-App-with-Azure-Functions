@@ -71,12 +71,15 @@ mongoimport --version
     # Inside file settings.py
 
     # ------- For Local Testing -------
-    #API_URL = "http://localhost:<PORT_NUMBER>/api"
+    API_URL = "http://localhost:<PORT_NUMBER>/api"
 
     # ------- For production -------
     # where APP_NAME is your Azure Function App name 
-    API_URL="https://<APP_NAME>.azurewebsites.net/api"
+    # API_URL="https://<APP_NAME>.azurewebsites.net/api"
     ```
+5. 
+
+
 4. Publish the Azure Functions and test with Postman.
     ```
     az webapp up \
@@ -88,55 +91,3 @@ mongoimport --version
 
 
 
-
-
-    
-
-
-### II. Deploying the client-side Flask web application
-
-We are going to update the Client-side `settings.py` with published API endpoints. First navigate to the `settings.py` file in the NeighborlyFrontEnd/ directory.
-
-Use a text editor to update the API_URL to your published url from the last step.
-```bash
-# Inside file settings.py
-
-# ------- For Local Testing -------
-#API_URL = "http://localhost:7071/api"
-
-# ------- For production -------
-# where APP_NAME is your Azure Function App name 
-API_URL="https://<APP_NAME>.azurewebsites.net/api"
-```
-
-### III. CI/CD Deployment
-
-1. Deploy your client app. **Note:** Use a **different** app name here to deploy the front-end, or else you will erase your API. From within the `NeighborlyFrontEnd` directory:
-    - Install dependencies with `pipenv install`
-    - Go into the pip env shell with `pipenv shell`
-    - Deploy your application to the app service. **Note:** It may take a minute or two for the front-end to get up and running if you visit the related URL.
-
-    Make sure to also provide any necessary information in `settings.py` to move from localhost to your deployment.
-
-2. Create an Azure Registry and dockerize your Azure Functions. Then, push the container to the Azure Container Registry.
-3. Create a Kubernetes cluster, and verify your connection to it with `kubectl get nodes`.
-4. Deploy app to Kubernetes, and check your deployment with `kubectl config get-contexts`.
-
-### IV. Event Hubs and Logic App
-
-1. Create a Logic App that watches for an HTTP trigger. When the HTTP request is triggered, send yourself an email notification.
-2. Create a namespace for event hub in the portal. You should be able to obtain the namespace URL.
-3. Add the connection string of the event hub to the Azure Function.
-
-### V.  Cleaning Up Your Services
-
-Before completing this step, make sure to have taken all necessary screenshots for the project! Check the rubric in the classroom to confirm.
-
-Clean up and remove all services, or else you will incur charges.
-
-```bash
-# replace with your resource group
-RESOURCE_GROUP="<YOUR-RESOURCE-GROUP>"
-# run this command
-az group delete --name $RESOURCE_GROUP
-```
