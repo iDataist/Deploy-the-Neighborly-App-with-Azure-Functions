@@ -38,6 +38,40 @@ mongoimport --version
 
 ## Steps to deploy the webapp
 
+1. Create the resources in Azure by running the command below. The output should look like [resource_output.txt](https://github.com/iDataist/Deploying-the-Neighborly-App-with-Azure-Functions/blob/main/Output/resource_output.txt). 
+    ```
+    zsh resource.zsh
+    ```
+    ![](output/resource-group.png)
+
+2. Save the connection string of cosmos account in the function app configuration.
+
+    ![](output/funcapp-configuration.png)
+
+3. Test the Azure Functions Locally. 
+
+    ```
+    # cd into NeighborlyAPI
+    cd NeighborlyAPI
+
+    # install dependencies
+    pipenv install
+
+    # go into the shell
+    pipenv shell
+
+    # update local.settings.json with the function app settings
+    func azure functionapp fetch-app-settings funcapp20210411
+
+    # test func locally
+    func start
+    ```
+
+
+
+
+
+
 ### I. Creating Azure Function App
 
 We need to set up the Azure resource group, region, storage account, and an app name before we can publish.
