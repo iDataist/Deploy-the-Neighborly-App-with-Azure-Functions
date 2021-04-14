@@ -1,8 +1,8 @@
 {
   "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=blob20210411;AccountKey=TqRpvOjnGKS9KG35WJ3YB8JLe9yJk2tQFlxMgOOZ3+ppTsJBCuZ35h7+mOgI09q4cOnsN+pZfnd9jX+RjzGd6g==", //update with the value from function app configuration
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=blob20210411;AccountKey=TqRpvOjnGKS9KG35WJ3YB8JLe9yJk2tQFlxMgOOZ3+ppTsJBCuZ35h7+mOgI09q4cOnsN+pZfnd9jX+RjzGd6g==", 
     "FUNCTIONS_WORKER_RUNTIME": "python", 
-    "ConnectionStrings": "mongodb://cosmos20210411:HADUePnthZBjbEGG4blrTUcwLN8smxqolU56JrYYcE3lWPiTH5cLwtL4RDJN1o3CTxvW6fc5eYVxVgmSmIMxgg==@cosmos20210411.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@cosmos20210411@" //update with the value from function app configuration
+    "ConnectionStrings": "mongodb://cosmos20210411:HADUePnthZBjbEGG4blrTUcwLN8smxqolU56JrYYcE3lWPiTH5cLwtL4RDJN1o3CTxvW6fc5eYVxVgmSmIMxgg==@cosmos20210411.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@cosmos20210411@" 
   }
 }
