@@ -16,7 +16,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             client = pymongo.MongoClient(url)
             database = client['mongodb20210411']
             collection = database['postcollection20210411']
-            query = {'_id': id}
+            query = {'_id': ObjectId(id)}
             result = collection.find_one(query)
             result = dumps(result)
             return func.HttpResponse(result, mimetype="application/json", charset='utf-8')
