@@ -4,7 +4,7 @@
     <div class="container">
         <div>
             <h2>Edit advertisement </h2>
-            <form action="/ad/update/{{ ad._id }}" method="post">
+            <form action="/ad/update/{{ ad._id['$oid'] }}" method="post">
                 <div class="form-group">
                     <label for="add-name">Title</label>
                     <input class="form-control" id="add-name" name="title" value="{{ ad.title }}" required/>
