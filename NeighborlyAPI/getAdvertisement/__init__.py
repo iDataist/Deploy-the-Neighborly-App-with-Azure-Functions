@@ -4,6 +4,7 @@ import json
 import os
 import pymongo
 from bson.json_util import dumps
+from bson.objectid import ObjectId
 
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
@@ -20,6 +21,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             collection = database['adcollection20210411']
             query = {'_id': ObjectId(id)}
             result = collection.find_one(query)
+            print(result)
             print("----------result--------")
             result = dumps(result)
             print(result)
