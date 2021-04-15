@@ -1,23 +1,23 @@
 data:
-  AzureWebJobsStorage: ''
+  AzureWebJobsStorage: RGVmYXVsdEVuZHBvaW50c1Byb3RvY29sPWh0dHBzO0VuZHBvaW50U3VmZml4PWNvcmUud2luZG93cy5uZXQ7QWNjb3VudE5hbWU9YmxvYjIwMjEwNDExO0FjY291bnRLZXk9U28raVVGYlBaMk5hcnFIVWEyY2pWWWhKUFY3RFViUGY1eHdtaVFISVVwRWxtVjFxRGdjWi9LMkJOelM0RUx3TS92Y1FiSFpZQjdCTTU2ZFdxR0ordmc9PQ==
   FUNCTIONS_WORKER_RUNTIME: cHl0aG9u
-  cosmosdb_connection_string: bW9uZ29kYjovL2Nvc21vczIwMjEwNDExOjFYZFFzNnREMlZCUjRHY251VnlkRjd0NlNiMEtqaXNzd1VDcm9WUDhpRkZvcDVLc2NraFpaR2tjb0gxN0p4SFVXU003SWpwYU1WU1k0TnRFanRWMU53PT1AY29zbW9zMjAyMTA0MTEubW9uZ28uY29zbW9zLmF6dXJlLmNvbToxMDI1NS8/c3NsPXRydWUmcmVwbGljYVNldD1nbG9iYWxkYiZyZXRyeXdyaXRlcz1mYWxzZSZtYXhJZGxlVGltZU1TPTEyMDAwMCZhcHBOYW1lPUBjb3Ntb3MyMDIxMDQxMUA=
+  ConnectionStrings: bW9uZ29kYjovL2Nvc21vczIwMjEwNDExOnQ4VVhYT2F6SVBBRmc2a3JRS0RoUDBuVjJGWEs2V1Z0MmF5Y2ZSaEIzWHVacDJXd0hMVUVBeTMyejZJTjRUTXF1aVBibWNBWVFzbWZkRVNzZVJibGVnPT1AY29zbW9zMjAyMTA0MTEubW9uZ28uY29zbW9zLmF6dXJlLmNvbToxMDI1NS8/c3NsPXRydWUmcmVwbGljYVNldD1nbG9iYWxkYiZyZXRyeXdyaXRlcz1mYWxzZSZtYXhJZGxlVGltZU1TPTEyMDAwMCZhcHBOYW1lPUBjb3Ntb3MyMDIxMDQxMUA=
 apiVersion: v1
 kind: Secret
 metadata:
   name: kubercluster20210411
 ---
 data:
-  host.master: N0hPRWFhdEkwdFJCMGZ4WVpxdW9aZGF5V0g1M1FwVThwbEJjcGVnV0tUeldjV0xQeUxza3BBPT0=
-  host.function.default: alptRDIyS2JMLzZIVTFndHhNWEJhcWpBZ3JTbWFwdTNweUtxTmt5U0VhQzRGWGlyUHRDUlRnPT0=
-  host.systemKey.default: UEZCNFBGY2F1WGprb0ZXQXNlajViZ1N0WS9GUmFDcnYwUEtOYzNoWDJBeHpUVzkxZmcwdzJBPT0=
-  functions.createadvertisement.default: UlZhUFVXUlhaU2d1WjRmU01PMlBVSGZRbTFYRFp6VU1tUDZQWG1wVjN5b2pzZjNzOGl3N3ZBPT0=
-  functions.deleteadvertisement.default: SzJFWjFSRnZNMnpubno5Qjk3UzhWcXFBZUVPcDZna2FNQmRkYlR1SG0wamNMTlVWR2ZmM1l3PT0=
-  functions.getadvertisement.default: R0RMN2dVZ0w1N29RODNaSmFSZjVxZmJyY2E0aEFUNXdNYTJFYW1lWHNwU1l3WHlVZHdtMDRBPT0=
-  functions.getadvertisements.default: Z044aDI3dXl2dXlFZUsvcnVKTnBKRFJoVXZqdlc3ZVFnNHk5Q0RIODdPaUI0UUVuNXFoUkJRPT0=
-  functions.getpost.default: ZDZVa2RPYTIwYXhDMjFmVTJjR2pmRVNseGJ6YXNiNGdUdE44YXhTQ3dZWnFxVnZDR2U5b0x3PT0=
-  functions.getposts.default: UmFwNzNxeEFPQWFlUjBrbmFabzM3czlld2FqemNuaFltRDlKQWNXanc5VHZrNU5CSFVIQUpRPT0=
-  functions.updateadvertisement.default: TE5aSjNPNFZhWGhMcGM3bDgyVkRzWmdoNWRxYW5EUml2ZTBqbnZGeFZxUTREeWNCTTZ1ZWdBPT0=
+  host.master: V0ZLN29YaTRXcWFhV1Rhc2FBR2xDcmFmSi9jak01S0VhYUhaYlhsNEN1YVJlN1B2dGxGdVlnPT0=
+  host.function.default: Y0dRNDJmbUF4QjhWZWtUN2lrSTlrUUhrSkZkcmhOdERtMm5UVjNBclRpUm9KWFFBTGJJM053PT0=
+  host.systemKey.default: d1NQaUFNM1ZuaDZYYWpMcDNmOTNpZ2NSNjR1QUhTU1VVc3l1S3NyWHc1T3Vza2pHVzBOTFlnPT0=
+  functions.createadvertisement.default: bDMvbGQwNk5MWUtPc05pV3UzZWFZaUVrMW95N0p3WjlJQmVybTk5bG5UeGE4cGpoZEk0aUd3PT0=
+  functions.deleteadvertisement.default: b1RHTWZ3Q2J2cG1jR0MvcTEvdUZ5NHVuU1lWUFJKa2FXUnluNlJMcVBpYnpFcTNhWmY0ZWFnPT0=
+  functions.getadvertisement.default: VU93bmlSYUZVaWFrb1VvcUg3cEdpcmllTHYxYWtrNWRyTVFOVWkwVjlKMTUxVWJGVWZveWR3PT0=
+  functions.getadvertisements.default: ZDlNYXY3MTBpRFZhUUVjQ01tY1o2VTl1bjlXYWNDRUF2VzNyWGJjODh5Si9uZFFrazMyaFlRPT0=
+  functions.getpost.default: M29rL3V5ZkZMYWNDY1VqU0prUWJzSS9xYmFiYXpscEdsTVlERHl0cWsxNmN2bHNOS3JzYVVBPT0=
+  functions.getposts.default: ejdaSzVCRUZ4eE1VUm43MkI0cU5wUFpnZ2xmSHZJMUN0OG04T3RsYXIxYkJmalIyOFpsN09BPT0=
+  functions.updateadvertisement.default: aEprbGxhR0JEbnVzVWlzaVV4aWVYYU5jNVBzODZDdkFhSHdmZzUwYVppOXRGanMzOTJzUm1nPT0=
 apiVersion: v1
 kind: Secret
 metadata:
@@ -134,5 +134,62 @@ spec:
             port: 80
             scheme: HTTP
       serviceAccountName: kubercluster20210411-function-keys-identity-svc-act
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubercluster20210411
+  labels:
+    app: kubercluster20210411
+spec:
+  selector:
+    matchLabels:
+      app: kubercluster20210411
+  template:
+    metadata:
+      labels:
+        app: kubercluster20210411
+    spec:
+      containers:
+      - name: kubercluster20210411
+        image: appregistry20210411.azurecr.io/docker20210411:v1
+        env:
+        - name: AzureFunctionsJobHost__functions__0
+          value: EventGridTrigger
+        envFrom:
+        - secretRef:
+            name: kubercluster20210411
+        readinessProbe:
+          failureThreshold: 3
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 240
+          httpGet:
+            path: /
+            port: 80
+            scheme: HTTP
+        startupProbe:
+          failureThreshold: 3
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 240
+          httpGet:
+            path: /
+            port: 80
+            scheme: HTTP
+      serviceAccountName: kubercluster20210411-function-keys-identity-svc-act
+---
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: kubercluster20210411
+  labels: {}
+spec:
+  scaleTargetRef:
+    name: kubercluster20210411
+  triggers:
+  - type: eventgridtrigger
+    metadata:
+      direction: in
 ---
 
