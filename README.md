@@ -90,7 +90,7 @@ mongoimport --version
     python app.py   
     ```
 
-5. Deploy the Azure Functions and the webapp.
+5. Deploy the Azure Functions and the webapp with Azure.
     ```bash
     # cd into NeighborlyAPI
     cd NeighborlyAPI
@@ -134,6 +134,14 @@ mongoimport --version
         --sku F1 \
         --verbose
     ```
+6. Containerize the Functions for AKS deployment.
+    ```bash
+    # cd into NeighborlyFrontEnd
+    cd NeighborlyFrontEnd
 
+    pipenv shell
+    
+    zsh docker.zsh
+    ```
 
 
