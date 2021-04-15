@@ -106,8 +106,8 @@ def add_ad_request():
         "imgUrl": request.form["imgUrl"],
         "price": request.form["price"]
     }
-    print(json.dumps(req_data))
-    response = requests.post(settings.API_URL + '/createAdvertisement', json=json.dumps(req_data))
+    print(req_data)
+    response = requests.post(settings.API_URL + '/createAdvertisement', json=req_data)
     print(response)
     return redirect(url_for('home'))
 
@@ -122,8 +122,8 @@ def update_ad_request(id):
         "imgUrl": request.form["imgUrl"],
         "price": request.form["price"]
     }
-    print(json.dumps(req_data))
-    response = requests.put(settings.API_URL + '/updateAdvertisement?id=' + id, json=json.dumps(req_data))
+    print(req_data)
+    response = requests.put(settings.API_URL + '/updateAdvertisement?id=' + id, json=req_data)
     return redirect(url_for('home'))
 
 @app.route('/ad/delete/<id>', methods=['POST'])
