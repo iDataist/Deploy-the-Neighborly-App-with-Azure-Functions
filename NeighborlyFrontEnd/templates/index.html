@@ -32,15 +32,15 @@
                 {% for a in ads %}
                 <div class="panel">
                     <div class="panel-body panel-neighborly">
-                        <div class="panel-title"> <a href="/ad/view/{{ a._id }}">{{a.title}}</a></div>
+                        <div class="panel-title"> <a href="/ad/view/{{ a._id['$oid'] }}">{{a.title}}</a></div>
                         <p class="text-muted">Email: {{a.email}}</p>
                         <p class="text-muted">{{a.description}}</p>
                         <p class="text-muted">Price: {{ a.price}}</p>
                         <p><img class="img-small" width="200" src={{a.imgUrl}}></p>
                     </div><!-- end panel body -->
                     <div class="panel-footer">
-                        <a class="btn btn-warning btn-xs" href="ad/edit/{{ a._id }}">Update</a>
-                        <a class="btn btn-danger btn-xs" href="ad/delete/{{ a._id }}">Delete</a>
+                        <a class="btn btn-warning btn-xs" href="ad/edit/{{ a._id['$oid'] }}">Update</a>
+                        <a class="btn btn-danger btn-xs" href="ad/delete/{{ a._id['$oid'] }}">Delete</a>
                     </div>
                  </div><!-- end panel  -->
                 {% endfor %}       
