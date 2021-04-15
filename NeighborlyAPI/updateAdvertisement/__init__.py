@@ -17,7 +17,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             client = pymongo.MongoClient(url)
             database = client['mongodb20210411']
             collection = database['adcollection20210411'] 
-            filter_query = {'_id': id}
+            filter_query = {'_id': ObjectId(id)}
             update_query = {"$set": request}
             rec_id1 = collection.update_one(filter_query, update_query)
             return func.HttpResponse(status_code=200)
