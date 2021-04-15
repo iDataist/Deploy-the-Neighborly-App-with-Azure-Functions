@@ -2,8 +2,7 @@
 
 ## Project Overview
 
-I built a web application called "Neighborly" that allows neighbors to post advertisements for services and products they can offer. The front-end application is built with the Python Flask micro framework. The application makes direct requests to the back-end API endpoints, which allow users to view, create, edit, and delete the community advertisements.
-
+I built a web application called "Neighborly" that allows neighbors to post advertisements for services and products they can offer. The front-end application is built with the Python Flask micro framework. The application makes direct requests to the back-end API endpoints, which allow users to view, create, edit, and delete the community advertisements. The ads and posts are stored in Azure Cosmos DB. 
 
 ## Dependencies
 
@@ -66,7 +65,7 @@ mongoimport --version
 
     ![](output/funcapp-local-test.png)
 
-4. Update the Client-side [settings.py](https://github.com/iDataist/Deploying-the-Neighborly-App-with-Azure-Functions/blob/main/NeighborlyFrontEnd/settings.py) with published API endpoints. 
+4. Update the Client-side [settings.py](https://github.com/iDataist/Deploying-the-Neighborly-App-with-Azure-Functions/blob/main/NeighborlyFrontEnd/settings.py) and deploy the webapp locally.
     ```bash
     # Inside file settings.py
 
@@ -77,11 +76,58 @@ mongoimport --version
     # where APP_NAME is your Azure Function App name 
     # API_URL="https://<APP_NAME>.azurewebsites.net/api"
     ```
-5. 
+    ```bash
+    # cd into NeighborlyFrontEnd
+    cd NeighborlyFrontEnd
 
+    # install dependencies
+    pipenv install
 
-4. Publish the Azure Functions and test with Postman.
+    # go into the shell
+    pipenv shell
+
+    # test the webapp locally
+    python app.py   
     ```
+
+5. Deploy the Azure Functions and the webapp.
+    ```bash
+    # cd into NeighborlyAPI
+    cd NeighborlyAPI
+
+    # install dependencies
+    pipenv install
+
+    # go into the shell
+    pipenv shell
+
+    # deploy Azure Functions
+    func azure functionapp publish funcapp20210411
+    ```
+    ```bash
+    # Inside file settings.py
+
+    # ------- For Local Testing -------
+    #API_URL = "http://localhost:<PORT_NUMBER>/api"
+
+    # ------- For production -------
+    # where APP_NAME is your Azure Function App name 
+    API_URL="https://funcapp20210411.azurewebsites.net/api"
+    ```
+    ```bash
+    # cd into NeighborlyFrontEnd
+    cd NeighborlyFrontEnd
+
+    # install dependencies
+    pipenv install
+
+    # go into the shell
+    pipenv shell
+
+    # export variable so the Azure stack knows which entry point to start your Flask app.  If your application file is named `application.py` or `something_else.py`, then you can replace that here.    
+    export FLASK_RUN=app.py
+
+    # deploy the webapp 
     az webapp up \
         --resource-group group20210411 \
         --name neighborlyapp \
