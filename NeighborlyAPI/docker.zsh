@@ -12,7 +12,6 @@ appRegistry="appregistry$uniqueId"
 kuberCluster="kubercluster$uniqueId"
 docker="docker$uniqueId"
 
-# https://medium.com/@gcufaro/using-docker-with-azure-functions-9e975fd58c1c
 # Part 1: Create a Container Registry
 # Create ACR
 az acr create \
@@ -73,6 +72,7 @@ az aks get-credentials \
 # Verify the connection to the cluster
 kubectl get nodes
 
+# Part 4: Deploy the App to Kubernetes
 # KEDA is Google's opensource tool for Kubernetes event-driven Autoscaling
 # set up the KEDA namespace for our Kubernetes cluster
 func kubernetes install \
@@ -97,8 +97,8 @@ kubectl config get-contexts
 
 kubectl get service --watch
 
-# # func deploy \
-# #     --platform kubernetes \
-# #     --name $funcApp \
-# #     --registry $appRegistry
+# func deploy \
+#     --platform kubernetes \
+#     --name $funcApp \
+#     --registry $appRegistry
 
