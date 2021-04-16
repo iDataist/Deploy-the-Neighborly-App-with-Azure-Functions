@@ -112,7 +112,7 @@ mongoimport --version
 
     # ------- For production -------
     # where APP_NAME is your Azure Function App name 
-    API_URL="https://funcapp20210411.azurewebsites.net/api"
+    API_URL="https://<APP_NAME>.azurewebsites.net/api"
     ```
     ```bash
     # cd into NeighborlyFrontEnd
@@ -134,7 +134,7 @@ mongoimport --version
         --sku F1 \
         --verbose
     ```
-6. Containerize the Functions for AKS deployment.
+6. Containerize the Functions for AKS deployment. The rationale of containerization is explained [here](https://medium.com/@gcufaro/using-docker-with-azure-functions-9e975fd58c1c).
     ```bash
     # cd into NeighborlyFrontEnd
     cd NeighborlyFrontEnd
@@ -143,5 +143,32 @@ mongoimport --version
     
     zsh docker.zsh
     ```
+    Obtain the endpoint and update the URL of the settings.py file.
+    ```bash
+    # Inside file settings.py
 
+    # ------- For Local Testing -------
+    #API_URL = "http://localhost:<PORT_NUMBER>/api"
 
+    # ------- For production -------
+    # where IP_ADDRESS is the dockerized function endpoint 
+    API_URL="https://<IP_ADDRESS>/api"
+    ```   
+    Test the webapp with the updated docerized function endpoint.
+     ```bash
+    # cd into NeighborlyFrontEnd
+    cd NeighborlyFrontEnd
+
+    # install dependencies
+    pipenv install
+
+    # go into the shell
+    pipenv shell
+
+    # test the webapp locally
+    python app.py   
+    ```
+7. Create a Logic App that watches for an HTTP trigger. When the HTTP request is triggered, send an email notification.
+![](Output/logic-app.png)
+8. Create a namespace for event hub in the portal and obtain the namespace URL.
+![](Output/event-hub.png)
