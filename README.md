@@ -39,7 +39,7 @@ mongoimport --version
 
 1. Create the resources in Azure by running the command below. The output should look like [resource_output.txt](https://github.com/iDataist/Deploying-the-Neighborly-App-with-Azure-Functions/blob/main/Output/resource_output.txt). 
     ```
-    zsh resource.zsh
+    bash resource.sh
     ```
     ![](output/resource-group.png)
 
@@ -141,7 +141,7 @@ mongoimport --version
 
     pipenv shell
     
-    zsh docker.zsh
+    bash docker.sh
     ```
     Obtain the endpoint and update the URL of the settings.py file.
     ```bash
