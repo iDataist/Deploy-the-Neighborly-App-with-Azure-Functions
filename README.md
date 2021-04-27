@@ -35,7 +35,7 @@ brew install mongodb-community@4.2
 mongoimport --version
 ```
 
-## Steps to deploy the webapp
+## Deploy the Function App and Web App
 
 1. Create the resources in Azure by running the command below. The output should look like [resource_output.txt](https://github.com/iDataist/Deploying-the-Neighborly-App-with-Azure-Functions/blob/main/Output/resource_output.txt). 
     ```
